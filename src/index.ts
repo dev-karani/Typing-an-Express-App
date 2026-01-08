@@ -1,17 +1,15 @@
-import express, {Request, Response } from "express";
-import type {Express} from 'express'
-import { pets } from "./data/pets";
+import express from "express";
+import type {Express,Request, Response } from 'express'
 import cors from 'cors'
-import type { Pet } from "./data/pets";
+import { petRouter } from "./routes/pets.routes";
 
 const app:Express = express()
 const Port:number = 8000
 
 app.use(cors())
 
-app.get('/', (req:Request, res: Response<Pet[]>)=>{
-    res.json(pets)
-})
+app.use('/pets',petRouter)
+
 app.use((req:Request, res:Response):void=>{
     res.json({message:"endpoint not found"}).status(404)
 })
