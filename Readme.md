@@ -11,4 +11,9 @@ This is a typed REST API built with Express.js that serves pet data in JSON form
 - Express.js
 
 ## Endpoints
-- `GET /` — returns available pets
+- `GET /pets/` — returns available pets
+- `GET /pets/:id/?password=please` — returns specific pet
+- `GET /pets/?adopted=true&species=dog"` — returns filtered as per parameters
+
+
+

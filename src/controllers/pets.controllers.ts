@@ -3,7 +3,6 @@ import  type {Request,Response} from 'express'
 
 import {pets} from '../data/pets'
 import type {Pet} from '../data/pets'
-import { MongoAzureError } from 'mongodb'
 
 type PetQueryParams ={
     species?:string
